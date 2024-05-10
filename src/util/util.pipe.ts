@@ -7,6 +7,7 @@ import { TestRequestBody } from './util'
 export class UtilPipe implements PipeTransform<any> {
   transform(value: TestRequestBody) {
     const { num } = value
+    console.log('Request Body:', value)
     if (typeof num !== 'number') {
       throw new BadRequestException('Missing parameters');
     }
